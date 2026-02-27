@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DFAC – Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg-crest"></div>
+
+  <header>
+    <div class="logo">
+      <img src="images/dfac-crest-gold.png" alt="DFAC Logo">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="verify.html">Verify</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="admin.html">Admin</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="admin-main" style="display:none;">
+    <section class="card">
+      <h1>DFAC Registry Administration</h1>
+      <button onclick="logout()" class="btn" style="background:var(--warning-red); float:right;">Logout</button>
+
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <p>Total Certificates Issued</p>
+          <div class="metric-value">248</div>
+        </div>
+        <div class="metric-card">
+          <p>Active Certificates</p>
+          <div class="metric-value">212</div>
+        </div>
+        <div class="metric-card">
+          <p>Founder Certificates</p>
+          <div class="metric-value">17</div>
+        </div>
+        <div class="metric-card">
+          <p>Pending Transfers</p>
+          <div class="metric-value">5</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Recent Activity Log</h2>
+        <ul>
+          <li>2h ago – DFAC-2026-ART-000152 Verified</li>
+          <li>5h ago – Transfer Request Submitted</li>
+          <li>1d ago – Founder Tier Certificate Issued</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Certificate Management</h2>
+        <button class="btn" onclick="alert('New certificate issuance form would appear here')">ISSUE NEW CERTIFICATE</button>
+        <!-- Table would go here with real data later -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>A portion of every authentication fee supports Alzheimer’s and dementia research through the Alzheimer’s Association.</p>
+    <a href="https://act.alz.org/site/Donation2?df_id=33828&mfc_pref=T&33828.donation=form1" target="_blank" class="donate-btn">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+      Donate Now
+    </a>
+    <p style="margin-top:2rem; opacity:0.8;">© 2026 Drew’s Fine Arts & Collectibles. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function checkAdmin() {
+      const user = prompt("Admin Username:");
+      const pass = prompt("Admin Password:");
+      if (user === "admin" && pass === "dfac2026") {
+        document.getElementById("admin-main").style.display = "block";
+      } else {
+        alert("Access denied");
+        window.location.href = "index.html";
+      }
+    }
+
+    function logout() {
+      alert("Logged out");
+      window.location.href = "index.html";
+    }
+
+    // Run login check on page load
+    checkAdmin();
+  </script>
+</body>
+</html>
