@@ -1,0 +1,25 @@
+/* Top-left fixed logo */
+.corner-logo {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 140px;          /* Adjust size here */
+  height: auto;
+  z-index: 1000;
+  opacity: 0.95;         /* Slightly softened */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.corner-logo:hover {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+/* Mobile adjustment */
+@media (max-width: 768px) {
+  .corner-logo {
+    width: 90px;
+    top: 15px;
+    left: 15px;
+  }
+}
